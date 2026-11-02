@@ -5,8 +5,8 @@ export default function Record({ playing, title = "Ember" }: { playing: boolean;
         <div className={`vinyl${playing ? "" : " paused"}`}>
           <div className="label-disc">
             <span className="mono" style={{ fontSize: 7, letterSpacing: 1.6, fontWeight: 500 }}>SIDE THREE</span>
-            <span className="script" style={{ fontSize: 22, lineHeight: 1.1 }}>{title}</span>
-            <span className="mono" style={{ fontSize: 7, letterSpacing: 1.6, fontWeight: 500 }}>LONDON · 33⅓</span>
+            <span className="display" style={{ fontSize: 17, lineHeight: 1.1, textTransform: "uppercase" }}>{title}</span>
+            <span className="mono" style={{ fontSize: 7, letterSpacing: 1.6, fontWeight: 500 }}>LONDON</span>
             <span className="hole" />
           </div>
         </div>

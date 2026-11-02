@@ -37,8 +37,8 @@ export default function Trip() {
               key={i}
               title={g.name}
               style={{
-                width: 44, height: 44, marginLeft: i ? -10 : 0, borderRadius: "50%", border: "2px solid var(--bg)",
-                background: i === 0 ? "var(--ember)" : ["#2a211c", "#33281f", "#241a16"][(i - 1) % 3],
+                width: 44, height: 44, marginLeft: i ? -10 : 0, borderRadius: 8, border: "2px solid var(--bg)",
+                background: i === 0 ? "var(--ember)" : ["var(--tile-1)", "var(--tile-2)", "var(--tile-3)"][(i - 1) % 3],
                 color: i === 0 ? "var(--bg)" : "var(--soft)", fontWeight: 600, fontSize: 16,
                 display: "flex", alignItems: "center", justifyContent: "center",
               }}
@@ -51,12 +51,12 @@ export default function Trip() {
       </div>
 
       <div className="grid2">
-        <Link href="/trip/details" className="card" style={{ borderRadius: 16, padding: "12px 14px", textDecoration: "none" }}>
+        <Link href="/trip/details" className="card" style={{ borderRadius: 10, padding: "12px 14px", textDecoration: "none" }}>
           <p className="label" style={{ fontSize: 10, letterSpacing: 1.6 }}>Flights</p>
           <p style={{ fontSize: 14, fontWeight: 600, marginTop: 4 }}>{details?.flight || trip.flight.out}</p>
           <p className="muted" style={{ fontSize: 13, marginTop: 2 }}>{details?.lands ? `Lands ${details.lands}` : trip.flight.detail}</p>
         </Link>
-        <Link href="/trip/details" className="card" style={{ borderRadius: 16, padding: "12px 14px", textDecoration: "none" }}>
+        <Link href="/trip/details" className="card" style={{ borderRadius: 10, padding: "12px 14px", textDecoration: "none" }}>
           <p className="label" style={{ fontSize: 10, letterSpacing: 1.6 }}>The stay</p>
           <p style={{ fontSize: 14, fontWeight: 600, marginTop: 4 }}>{details?.stay || trip.stay.name}</p>
           <p className="muted" style={{ fontSize: 13, marginTop: 2 }}>{details?.checkIn ? `Check-in ${details.checkIn}` : trip.stay.detail}</p>
@@ -64,7 +64,7 @@ export default function Trip() {
       </div>
 
       <div className="between" style={{ alignItems: "baseline" }}>
-        <p className="script" style={{ fontSize: 30, lineHeight: 1 }}>Tracklist</p>
+        <p className="display" style={{ fontSize: 22 }}>Tracklist</p>
         <p className="mono muted" style={{ fontSize: 11 }}>ONE DAY PER TRACK</p>
       </div>
 
@@ -73,7 +73,7 @@ export default function Trip() {
           <li
             key={d.track}
             className="row"
-            style={{ gap: 14, padding: "14px 16px", borderBottom: i < days.length - 1 ? "1px solid #231f1c" : 0, background: d.show ? "var(--ember-deep)" : undefined }}
+            style={{ gap: 14, padding: "14px 16px", borderBottom: i < days.length - 1 ? "1px solid var(--line)" : 0, background: d.show ? "var(--ember-deep)" : undefined }}
           >
             <span className={`mono ${d.show ? "ember" : "muted"}`} style={{ width: 26, fontSize: 12, fontWeight: 500 }}>{d.track}</span>
             <Link href={`/crate?day=${d.tab}`} style={{ flexGrow: 1, textDecoration: "none" }}>

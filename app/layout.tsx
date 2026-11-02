@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 const FONTS =
-  "https://fonts.googleapis.com/css2?family=Gloock&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Pinyon+Script&display=swap";
+  "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap";
 
 export const metadata: Metadata = {
   title: "Side Three — Ember London",
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0c0a09",
+  themeColor: "#10142a",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",

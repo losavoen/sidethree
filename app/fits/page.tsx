@@ -53,7 +53,7 @@ function FitsInner() {
 
       {shown.length === 0 ? (
         <div className="card" style={{ padding: 24, textAlign: "center" }}>
-          <p className="script" style={{ fontSize: 30 }}>No fits yet</p>
+          <p className="display" style={{ fontSize: 24 }}>No fits yet</p>
           <p className="muted" style={{ fontSize: 14, marginTop: 6 }}>Post yours before you leave the flat. Fits become their own sequence in the film.</p>
         </div>
       ) : (

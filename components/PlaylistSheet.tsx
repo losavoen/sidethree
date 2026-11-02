@@ -10,7 +10,7 @@ export default function PlaylistSheet({ onClose }: { onClose: () => void }) {
         <div className="between">
           <div>
             <p className="label">Now spinning</p>
-            <p className="script" style={{ fontSize: 32, lineHeight: 1.1 }}>three steps forward</p>
+            <p className="display" style={{ fontSize: 26, lineHeight: 1.05 }}>three steps forward</p>
           </div>
           <button className="icon-btn" onClick={onClose} aria-label="Close playlist"><CloseIcon size={18} /></button>
         </div>

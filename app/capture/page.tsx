@@ -119,7 +119,7 @@ export default function Capture() {
         {error && <p className="mono muted" style={{ position: "relative", fontSize: 12, padding: 24, textAlign: "center" }}>{error}</p>}
 
         {moment === "The set" && (
-          <div className="card" style={{ position: "absolute", left: 14, right: 14, bottom: 52, background: "rgba(12,10,9,0.86)", borderRadius: 18, padding: "14px 16px", display: "flex", flexDirection: "column", gap: 10 }}>
+          <div className="card" style={{ position: "absolute", left: 14, right: 14, bottom: 52, background: "rgba(16,20,42,0.9)", borderRadius: 10, padding: "14px 16px", display: "flex", flexDirection: "column", gap: 10 }}>
             <div className="between" style={{ alignItems: "baseline" }}>
               <p className="serif" style={{ fontSize: 18 }}>Dlala shot list</p>
               <p className="mono ember" style={{ fontSize: 12, fontWeight: 500 }}>{clean}/10 CLEAN</p>
@@ -135,7 +135,7 @@ export default function Capture() {
                     className="row"
                     style={{ gap: 8, background: "none", border: 0, padding: "4px 0", color: done ? "var(--text)" : "var(--muted)", textAlign: "left" }}
                   >
-                    <span style={{ width: 16, height: 16, borderRadius: 5, flexShrink: 0, background: done ? "var(--ember)" : "transparent", border: done ? 0 : "1px solid #5a524b", color: "var(--bg)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <span style={{ width: 16, height: 16, borderRadius: 5, flexShrink: 0, background: done ? "var(--ember)" : "transparent", border: done ? 0 : "1px solid var(--line-strong)", color: "var(--bg)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                       {done && <CheckIcon />}
                     </span>
                     {s}
@@ -161,7 +161,7 @@ export default function Capture() {
       </div>
 
       <div className="between" style={{ padding: "0 12px" }}>
-        <Link href="/crate" aria-label="Open the crate" style={{ width: 48, height: 48, borderRadius: 12, background: "#2a211c", border: "1px solid #3a302a" }} />
+        <Link href="/crate" aria-label="Open the crate" style={{ width: 48, height: 48, borderRadius: 12, background: "var(--tile-1)", border: "1.5px solid var(--line)" }} />
         <button className={`shutter${recording ? " rec" : ""}`} onClick={recording ? stopRec : startRec} aria-label={recording ? "Stop recording" : "Record clip"} disabled={!!error}>
           <span />
         </button>

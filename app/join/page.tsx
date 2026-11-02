@@ -36,7 +36,7 @@ export default function Join() {
       <div className="drop-in"><Record playing title="Ember" /></div>
 
       <div className="stack fade-up" style={{ gap: 6, textAlign: "center" }}>
-        <p className="script" style={{ fontSize: 48, lineHeight: 1 }}>{trip.title}</p>
+        <p className="script" style={{ fontSize: 48, lineHeight: 0.9 }}>{trip.title}</p>
         <p className="mono muted" style={{ fontSize: 12, letterSpacing: 1 }}>{trip.subtitle.toUpperCase()}</p>
         <p className="muted" style={{ fontSize: 15, marginTop: 8 }}>Everything we shoot goes into one film. Add your name so your clips are credited to you.</p>
       </div>

@@ -72,7 +72,7 @@ export default function Notes() {
       <section className="card stack" style={{ padding: 18, gap: 14 }}>
         <div>
           <p className="label" style={{ fontSize: 10 }}>Voice note</p>
-          <p className="script" style={{ fontSize: 30, lineHeight: 1.15, marginTop: 6 }}>{QUESTION}</p>
+          <p className="display" style={{ fontSize: 26, lineHeight: 1.05, marginTop: 6 }}>{QUESTION}</p>
         </div>
         <button className={`btn block ${recording ? "light" : "ember"}`} onClick={toggleVoice}>
           {recording ? <><span className="dot" />Stop recording</> : <><MicIcon size={18} />Record an answer</>}

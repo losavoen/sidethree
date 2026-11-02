@@ -7,7 +7,7 @@ import { CloseIcon } from "@/components/Icons";
 import { setPressed } from "@/lib/store";
 
 // The reveal: the record stops, the film is pressed, everyone sees it at once.
-const steps = ["The record stops spinning", "Cutting on the triple pulse", "Grading the nights in ember", "Pressing Side Three"];
+const steps = ["The record stops spinning", "Cutting on the triple pulse", "Inking the nights in pink", "Pressing Side Three"];
 
 export default function Press() {
   const [step, setStep] = useState(0);
@@ -38,8 +38,7 @@ export default function Press() {
         {done ? (
           <div className="fade-up stack" style={{ gap: 6 }}>
             <p className="mono" style={{ fontSize: 11, letterSpacing: 3, color: "var(--soft)" }}>SIDE THREE</p>
-            <p className="script" style={{ fontSize: 64, lineHeight: 1 }}>Ember</p>
-            <p className="serif" style={{ fontSize: 22, letterSpacing: 6 }}>LONDON</p>
+            <p className="script" style={{ fontSize: 64, lineHeight: 0.88 }}>Ember<br />London</p>
             <p className="muted" style={{ fontSize: 14, marginTop: 8 }}>You had to be there.</p>
           </div>
         ) : (

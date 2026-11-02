@@ -10,7 +10,7 @@ import { isPressed, listMedia, type MediaRecord } from "@/lib/store";
 
 const lengths = [{ label: "60s", s: 60 }, { label: "2 min 30", s: 150 }, { label: "3 min", s: 180 }];
 const grades = [
-  { label: "Ember", filter: "sepia(0.35) saturate(1.25) hue-rotate(-12deg) contrast(1.08)" },
+  { label: "Riso", filter: "sepia(0.35) saturate(1.25) hue-rotate(-12deg) contrast(1.08)" },
   { label: "Night bus", filter: "saturate(0.8) contrast(1.15) brightness(0.9) hue-rotate(8deg)" },
   { label: "Daylight", filter: "saturate(1.05) brightness(1.05)" },
 ];
@@ -80,7 +80,7 @@ export default function Film() {
         </div>
         <Record playing={false} />
         <div className="stack" style={{ textAlign: "center", gap: 8 }}>
-          <p className="script" style={{ fontSize: 36, lineHeight: 1 }}>Still recording</p>
+          <p className="script" style={{ fontSize: 34, lineHeight: 0.95 }}>Still recording</p>
           <p className="muted" style={{ fontSize: 15 }}>
             Every clip, fit and voice note goes in. On Sunday 15 Feb the record stops spinning and the film is pressed for all of us at once.
           </p>
@@ -102,7 +102,7 @@ export default function Film() {
         <Link href="/sleeve" className="btn" style={{ minHeight: 36, fontSize: 13 }}><ShareIcon size={16} />My sleeve</Link>
       </div>
 
-      <div style={{ height: 430, borderRadius: 24, background: "#1a130f", border: "1px solid #2e2420", position: "relative", overflow: "hidden", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 4 }}>
+      <div style={{ height: 430, borderRadius: 10, background: "var(--ember-deep)", border: "1.5px solid var(--line)", position: "relative", overflow: "hidden", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 4 }}>
         {current && url && (current.mime.startsWith("image/") ? (
           <img src={url} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: grades[grade].filter }} />
         ) : (
@@ -111,13 +111,12 @@ export default function Film() {
         {!playing && (
           <>
             <p className="mono" style={{ fontSize: 11, letterSpacing: 3, color: "var(--soft)" }}>SIDE THREE</p>
-            <p className="script" style={{ fontSize: 64, lineHeight: 1.1 }}>Ember</p>
-            <p className="serif" style={{ fontSize: 22, letterSpacing: 6 }}>LONDON</p>
+            <p className="script" style={{ fontSize: 60, lineHeight: 0.88, textAlign: "center" }}>Ember<br />London</p>
             <button
               onClick={() => clips.length && setIndex(0)}
               disabled={!clips.length}
               aria-label="Play the film"
-              style={{ marginTop: 28, width: 64, height: 64, borderRadius: "50%", background: "var(--text)", border: 0, color: "var(--bg)", display: "flex", alignItems: "center", justifyContent: "center" }}
+              style={{ marginTop: 28, width: 64, height: 64, borderRadius: 8, background: "var(--text)", border: 0, color: "var(--bg)", display: "flex", alignItems: "center", justifyContent: "center" }}
             >
               <PlayIcon size={22} />
             </button>
@@ -129,7 +128,7 @@ export default function Film() {
           <span>{playing ? `${index + 1}/${clips.length}` : lengths[length].label.toUpperCase()}</span>
         </div>
         {playing && (
-          <div style={{ position: "absolute", left: 0, bottom: 0, height: 3, width: "100%", background: "#2e2420" }}>
+          <div style={{ position: "absolute", left: 0, bottom: 0, height: 3, width: "100%", background: "var(--line)" }}>
             <div style={{ height: 3, width: `${((index + 1) / clips.length) * 100}%`, background: "var(--ember)", transition: "width .3s" }} />
           </div>
         )}
@@ -146,9 +145,9 @@ export default function Film() {
         </div>
       </div>
 
-      <div className="card row" style={{ borderRadius: 18, padding: "12px 14px" }}>
-        <div style={{ width: 40, height: 40, borderRadius: "50%", background: "#1d1917", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }} aria-hidden>
-          <div style={{ width: 14, height: 14, borderRadius: "50%", background: "var(--ember)" }} />
+      <div className="card row" style={{ borderRadius: 10, padding: "12px 14px" }}>
+        <div style={{ width: 40, height: 40, borderRadius: 8, background: "var(--bg-deep)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }} aria-hidden>
+          <div style={{ width: 14, height: 14, borderRadius: 8, background: "var(--ember)" }} />
         </div>
         <div style={{ flexGrow: 1, minWidth: 0 }}>
           <p style={{ fontSize: 15, fontWeight: 600 }}>Scored to three steps forward</p>

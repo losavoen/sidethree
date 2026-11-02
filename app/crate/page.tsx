@@ -9,7 +9,7 @@ import { GridIcon } from "@/components/Icons";
 import { days, sampleCrate } from "@/lib/trip";
 import { listMedia, timeLabel, type MediaRecord } from "@/lib/store";
 
-const tones = ["#2A211C", "#3A2418", "#1F1B19", "#33281F", "#241A16", "#2E2420"];
+const tones = ["var(--tile-1)", "var(--tile-3)", "var(--tile-4)", "var(--tile-2)", "var(--tile-3)", "var(--tile-5)"];
 
 function CrateInner() {
   const params = useSearchParams();
@@ -41,7 +41,7 @@ function CrateInner() {
       </div>
 
       <div className="between" style={{ alignItems: "baseline" }}>
-        <p className="script" style={{ fontSize: 28, lineHeight: 1 }}>{set.heading}</p>
+        <p className="display" style={{ fontSize: 22 }}>{set.heading}</p>
         <p className="mono muted" style={{ fontSize: 11 }}>{set.sub}</p>
       </div>
 
