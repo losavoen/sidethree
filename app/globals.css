@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #0c0a09;
+  --color-deck: #121010;
+  --color-sleeve: #161311;
+  --color-groove: #1a1715;
+  --color-line: #262120;
+  --color-line-strong: #2a2521;
+  --color-paper: #ede6da;
+  --color-dust: #a39a8e;
+  --color-dust-soft: #d2c9bc;
+  --color-ember: #e2602d;
+  --color-ember-soft: #f2865a;
+  --color-ember-deep: #2a120a;
+
+  --font-sans: var(--font-inter-tight), system-ui, sans-serif;
+  --font-serif: var(--font-gloock), Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --font-script: var(--font-pinyon), cursive;
+}
+
+:root {
+  color-scheme: dark;
+  --font-gloock: "Gloock";
+  --font-inter-tight: "Inter Tight";
+  --font-jetbrains: "JetBrains Mono";
+  --font-pinyon: "Pinyon Script";
+}
+
+html,
+body {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ember-soft);
+  outline-offset: 2px;
+}
+
+input[type="text"]:focus-visible,
+input:not([type]):focus-visible {
+  outline: none;
+  box-shadow: 0 1px 0 0 var(--color-ember-soft);
+}
+
+/* Vinyl grooves */
+.vinyl {
+  background: repeating-radial-gradient(circle at center, #121010 0 2px, #1d1917 2px 4px);
+  animation: spin 1.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Light film grain over footage */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  opacity: 0.09;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  animation: grain 0.6s steps(4) infinite;
+}
+
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-5%, 3%); }
+  50% { transform: translate(4%, -4%); }
+  75% { transform: translate(-3%, -2%); }
+  100% { transform: translate(0, 0); }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vinyl,
+  .grain::after {
+    animation: none;
+  }
+}
