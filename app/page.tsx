@@ -33,7 +33,8 @@ export default function Home() {
     <main className="app">
       <div className="between">
         <div className="row" style={{ gap: 8 }}>
-          <span className="script" style={{ fontSize: 24, textShadow: "2px 2px 0 var(--ember)" }}>Side Three</span>
+          <span style={{ width: 10, height: 10, borderRadius: "50%", background: "var(--ember)" }} aria-hidden />
+          <span className="serif" style={{ fontSize: 26, letterSpacing: -0.3 }}>Side Three</span>
         </div>
         <div className="row" style={{ gap: 8 }}>
           {profile ? (
@@ -53,10 +54,10 @@ export default function Home() {
 
       <p className="label" style={{ marginTop: 8 }}>Now spinning</p>
 
-      <section className="card dots" style={{ borderRadius: 10, padding: "24px 20px 20px", display: "flex", flexDirection: "column", gap: 18 }}>
+      <section className="card" style={{ borderRadius: 28, padding: "24px 20px 20px", display: "flex", flexDirection: "column", gap: 18 }}>
         <Record playing={playing} />
         <div className="stack" style={{ gap: 6 }}>
-          <h1 className="script" style={{ fontSize: 44, lineHeight: 0.92 }}>{trip.title}</h1>
+          <h1 className="script" style={{ fontSize: 44, lineHeight: 1 }}>{trip.title}</h1>
           <p className="mono muted" style={{ fontSize: 12, letterSpacing: 1 }}>{trip.subtitle.toUpperCase()}</p>
           <p className="mono ember" style={{ fontSize: 12, letterSpacing: 1, fontWeight: 500, minHeight: 15 }}>
             {countdown === null ? "" : countdown > 0 ? `${countdown} DAYS TO TAKEOFF · DLALA THUKZIN × 2` : "WE'RE IN LONDON"}
@@ -66,7 +67,7 @@ export default function Home() {
           <button
             onClick={() => setPlaying((p) => !p)}
             aria-label={playing ? "Stop the record" : "Spin the record"}
-            style={{ width: 52, height: 52, flexShrink: 0, borderRadius: 8, background: "var(--text)", border: 0, color: "var(--bg)", display: "flex", alignItems: "center", justifyContent: "center" }}
+            style={{ width: 52, height: 52, flexShrink: 0, borderRadius: "50%", background: "var(--text)", border: 0, color: "var(--bg)", display: "flex", alignItems: "center", justifyContent: "center" }}
           >
             {playing ? <PauseIcon /> : <PlayIcon />}
           </button>
@@ -74,7 +75,7 @@ export default function Home() {
             <p style={{ fontSize: 16, fontWeight: 600 }}>three steps forward</p>
             <p className="muted" style={{ fontSize: 13 }}>Open the playlist</p>
           </button>
-          <Link href="/capture" aria-label="Open camera" style={{ width: 52, height: 52, flexShrink: 0, borderRadius: 8, background: "var(--ember)", color: "var(--bg)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <Link href="/capture" aria-label="Open camera" style={{ width: 52, height: 52, flexShrink: 0, borderRadius: "50%", background: "var(--ember)", color: "var(--bg)", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <CameraIcon />
           </Link>
         </div>
@@ -94,7 +95,7 @@ export default function Home() {
 
 function Stat({ value, label }: { value: string; label: string }) {
   return (
-    <div className="card" style={{ borderRadius: 10, padding: 12 }}>
+    <div className="card" style={{ borderRadius: 16, padding: 12 }}>
       <p className="serif" style={{ fontSize: 22 }}>{value}</p>
       <p className="mono muted" style={{ fontSize: 11, marginTop: 2 }}>{label}</p>
     </div>

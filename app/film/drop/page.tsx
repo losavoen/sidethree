@@ -42,11 +42,11 @@ export default function Drop() {
         <h1 className="title">The drop</h1>
       </div>
 
-      <div className="grid3" style={{ gap: 4, borderRadius: 10, overflow: "hidden" }}>
+      <div className="grid3" style={{ gap: 4, borderRadius: 20, overflow: "hidden" }}>
         {Array.from({ length: slots }).map((_, i) => {
           const c = clips[i];
           return (
-            <div key={i} className={`tile${c?.dlala ? " dlala" : ""}`} style={{ borderRadius: 0, aspectRatio: "9 / 16", background: ["var(--tile-1)", "var(--tile-3)", "var(--tile-4)"][i % 3] }}>
+            <div key={i} className={`tile${c?.dlala ? " dlala" : ""}`} style={{ borderRadius: 0, aspectRatio: "9 / 16", background: ["#2a211c", "#3a2418", "#1f1b19"][i % 3] }}>
               {c && <video ref={(el) => { refs.current[i] = el; }} src={urls[i]} muted playsInline loop style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />}
               <div className="meta" style={{ justifyContent: "flex-end" }}>
                 <span className="tiny" style={{ color: "var(--soft)" }}>{c ? c.who : "—"}</span>
